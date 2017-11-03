@@ -6,13 +6,13 @@ env:
         - QEMU_VER=v2.9.1
         - DOCKER_REPO=multiarch/debian-debootstrap
     matrix:
+        - ARCH=amd64 INCLUDE=wget QEMU_ARCH=x86_64 SUITE=wheezy UNAME_ARCH=x86_64 VERSION=wheezy
+        - ARCH=armhf INCLUDE=wget QEMU_ARCH=arm SUITE=wheezy UNAME_ARCH=armv7l VERSION=wheezy
+        - ARCH=i386 INCLUDE=wget QEMU_ARCH=i386 SUITE=wheezy UNAME_ARCH=i386 VERSION=wheezy
+
         - ARCH=amd64 INCLUDE=wget QEMU_ARCH=x86_64 SUITE=jessie UNAME_ARCH=x86_64 VERSION=jessie
         - ARCH=armhf INCLUDE=wget QEMU_ARCH=arm SUITE=jessie UNAME_ARCH=armv7l VERSION=jessie
         - ARCH=i386 INCLUDE=wget QEMU_ARCH=i386 SUITE=jessie UNAME_ARCH=i386 VERSION=jessie
-
-        - ARCH=amd64 INCLUDE=wget QEMU_ARCH=x86_64 SUITE=sid UNAME_ARCH=x86_64 VERSION=sid
-        - ARCH=armhf INCLUDE=wget QEMU_ARCH=arm SUITE=sid UNAME_ARCH=armv7l VERSION=sid
-        - ARCH=i386 INCLUDE=wget QEMU_ARCH=i386 SUITE=sid UNAME_ARCH=i386 VERSION=sid
 
         - ARCH=amd64 INCLUDE=wget QEMU_ARCH=x86_64 SUITE=stretch UNAME_ARCH=x86_64 VERSION=stretch
         - ARCH=armhf INCLUDE=wget QEMU_ARCH=arm SUITE=stretch UNAME_ARCH=armv7l VERSION=stretch
@@ -22,9 +22,9 @@ env:
         - ARCH=armhf INCLUDE=wget QEMU_ARCH=arm SUITE=buster UNAME_ARCH=armv7l VERSION=buster
         - ARCH=i386 INCLUDE=wget QEMU_ARCH=i386 SUITE=buster UNAME_ARCH=i386 VERSION=buster
 
-        - ARCH=amd64 INCLUDE=wget QEMU_ARCH=x86_64 SUITE=wheezy UNAME_ARCH=x86_64 VERSION=wheezy
-        - ARCH=armhf INCLUDE=wget QEMU_ARCH=arm SUITE=wheezy UNAME_ARCH=armv7l VERSION=wheezy
-        - ARCH=i386 INCLUDE=wget QEMU_ARCH=i386 SUITE=wheezy UNAME_ARCH=i386 VERSION=wheezy
+        - ARCH=amd64 INCLUDE=wget QEMU_ARCH=x86_64 SUITE=sid UNAME_ARCH=x86_64 VERSION=sid
+        - ARCH=armhf INCLUDE=wget QEMU_ARCH=arm SUITE=sid UNAME_ARCH=armv7l VERSION=sid
+        - ARCH=i386 INCLUDE=wget QEMU_ARCH=i386 SUITE=sid UNAME_ARCH=i386 VERSION=sid
 
 before_script:
     - echo "deb http://ftp.de.debian.org/debian sid main" | sudo tee -a /etc/apt/sources.list
